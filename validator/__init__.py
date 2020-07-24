@@ -6,7 +6,6 @@ Author Joanna Dmochowska
 """
 
 from flask import Flask
-
 app = Flask(__name__)
 
-import validator.views
+import validator.views # noqa
