@@ -1,0 +1,44 @@
+
+<html>
+<body>
+	<form action="check" method="post">
+		<h2>VALIDATOR</h2>
+		<p>
+			<label>Enter NIP:</label><br>
+			<input type="text" name="nip" />
+		</p>
+		<p>
+			<label>Enter REGON:</label><br>
+			<input type="text" name="regon" />
+		</p>
+		<p>
+			<label>Enter PESEL:</label><br>
+			<input type="text" name="pesel" />
+		</p>
+		<p><button type="submit">Check</button></p>
+	</form>
+
+<p>
+	{% if result_nip %}
+		<b style="color:green">Entered NIP {{nip}} is correct</b><br>
+	{% elif result_nip == False %}
+		<b style="color:red">Entered NIP {{nip}} is incorrect</b><br>
+	{% endif %}
+
+	{% if result_regon %}
+		<b style="color:green">Entered REGON {{regon}} is correct</b><br>
+	{% elif result_regon == False %}
+		<b style="color:red">Entered REGON {{regon}} is incorrect</b><br>
+	{% endif %}
+
+	{% if result_pesel %}
+		<b style="color:green">Entered PESEL {{pesel}} is correct</b><br>
+	{% elif result_pesel == False %}
+		<b style="color:red">Entered PESEL {{pesel}} is incorrect</b><br>
+	{% endif %}
+</p>
+
+
+
+</body>
+</html>
