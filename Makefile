@@ -19,7 +19,7 @@ run:
 		python run.py
 
 docker_build:
-		docker build -t $(SERVICE_NAME)
+		docker build -t $(SERVICE_NAME) .
 
 docker_run:
 		docker run --name $(SERVICE_NAME)-dev -p 5001:5000 -d $(SERVICE_NAME)
@@ -27,7 +27,7 @@ docker_run:
 docker_stop:
 		docker stop $(SERVICE_NAME)-dev
 
-docker_push: docker_build
+docker_push:
 		@docker login --username $(DOCKER_USERNAME) --password ${DOCKER_PASSWORD}; \
 		docker tag $(SERVICE_NAME) $(DOCKER_USERNAME)/$(SERVICE_NAME); \
 		docker push $(DOCKER_USERNAME)/$(SERVICE_NAME); \
