@@ -7,11 +7,9 @@ install:
   - make deps
 
 script:
-  - make run
   - make lint
   - make test
   - make test_cov
-  - make test_smoke
 
 after_success:
   - make docker_build
