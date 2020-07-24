@@ -4,7 +4,7 @@ deps:
 		pip install -r requirements.txt
 
 lint:
-		flake8 Validator tests
+		flake8 validator tests
 
 test:
 		py.test
