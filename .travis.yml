@@ -1,0 +1,22 @@
+language: python
+
+python:
+  - "3.6.9"
+
+install:
+  - make deps
+
+script:
+  - make lint
+  - make test
+  - make test_cov
+  - make test_smoke
+
+after_success:
+  - make docker_build
+  - make docker_push
+
+deploy:
+  provider: heroku
+  app: flask-nip-regon-pesel
+  api_key: ${HEROKU_API_KEY}
