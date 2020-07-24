@@ -31,9 +31,11 @@ def show_results_regon(regon):
     validator = Validator()
     result_regon = validator.check_regon(regon)
     if result_regon:
-        return '<b style="color:green">Regon number ' + regon + ' is correct</b>'
+        return '<b style="color:green">Regon number ' \
+               + regon + ' is correct</b>'
     else:
-        return '<b style="color:red">Regon number ' + regon + ' is incorrect</b>'
+        return '<b style="color:red">Regon number ' \
+               + regon + ' is incorrect</b>'
 
 
 @app.route('/check/pesel/<pesel>')
@@ -41,9 +43,11 @@ def show_results_pesel(pesel):
     validator = Validator()
     result_pesel = validator.check_pesel(pesel)
     if result_pesel:
-        return '<b style="color:green">Pesel number ' + pesel + ' is correct</b>'
+        return '<b style="color:green">Pesel number ' \
+               + pesel + ' is correct</b>'
     else:
-        return '<b style="color:red">Pesel number ' + pesel + ' is incorrect</b>'
+        return '<b style="color:red">Pesel number ' \
+               + pesel + ' is incorrect</b>'
 
 
 @app.route('/check', methods=['POST'])
@@ -57,5 +61,7 @@ def check():
     result_regon = validator.check_regon(regon)
     result_pesel = validator.check_pesel(pesel)
 
-    return render_template('form.html', nip=nip, regon=regon, pesel=pesel, result_nip=result_nip,
-                           result_regon=result_regon, result_pesel=result_pesel)
+    return render_template('form.html', nip=nip, regon=regon,
+                           pesel=pesel, result_nip=result_nip,
+                           result_regon=result_regon,
+                           result_pesel=result_pesel)

@@ -25,7 +25,9 @@ class FlaskTestCases(unittest.TestCase):
             # convert result_variable.data to string from byte
             result_variable_str = str(result_variable.data, "utf-8")
             # assertion
-            self.assertEqual(result_variable_str, '<b style="color:green">NIP number ' + nip + ' is correct</b>')
+            self.assertEqual(result_variable_str, '<b style="color:green">'
+                                                  'NIP number ' + nip +
+                             ' is correct</b>')
 
     def test_regon_correct(self):
 
@@ -34,7 +36,9 @@ class FlaskTestCases(unittest.TestCase):
         for regon in regon_list:
             result_variable = self.app.get('/check/regon/' + regon)
             result_variable_str = str(result_variable.data, "utf-8")
-            self.assertEqual(result_variable_str, '<b style="color:green">Regon number ' + regon + ' is correct</b>')
+            self.assertEqual(result_variable_str, '<b style="color:green">'
+                                                  'Regon number ' + regon +
+                             ' is correct</b>')
 
     def test_pesel_correct(self):
         pesel_list = ["13301593751", "12040309502"]
@@ -42,7 +46,9 @@ class FlaskTestCases(unittest.TestCase):
         for pesel in pesel_list:
             result_variable = self.app.get('/check/pesel/' + pesel)
             result_variable_str = str(result_variable.data, "utf-8")
-            self.assertEqual(result_variable_str, '<b style="color:green">Pesel number ' + pesel + ' is correct</b>')
+            self.assertEqual(result_variable_str, '<b style="color:green">'
+                                                  'Pesel number ' + pesel +
+                             ' is correct</b>')
 
     def test_nip_incorrect(self):
 
@@ -51,7 +57,9 @@ class FlaskTestCases(unittest.TestCase):
         for nip in nip_list:
             result_variable = self.app.get('/check/nip/' + nip)
             result_variable_str = str(result_variable.data, "utf-8")
-            self.assertEqual(result_variable_str, '<b style="color:red">NIP number ' + nip + ' is incorrect</b>')
+            self.assertEqual(result_variable_str, '<b style="color:red">'
+                                                  'NIP number ' + nip +
+                             ' is incorrect</b>')
 
     def test_regon_incorrect(self):
 
@@ -60,7 +68,9 @@ class FlaskTestCases(unittest.TestCase):
         for regon in regon_list:
             result_variable = self.app.get('/check/regon/' + regon)
             result_variable_str = str(result_variable.data, "utf-8")
-            self.assertEqual(result_variable_str, '<b style="color:red">Regon number ' + regon + ' is incorrect</b>')
+            self.assertEqual(result_variable_str, '<b style="color:red">'
+                                                  'Regon number ' + regon +
+                             ' is incorrect</b>')
 
     def test_pesel_incorrect(self):
 
@@ -69,4 +79,6 @@ class FlaskTestCases(unittest.TestCase):
         for pesel in pesel_list:
             result_variable = self.app.get('/check/pesel/' + pesel)
             result_variable_str = str(result_variable.data, "utf-8")
-            self.assertEqual(result_variable_str, '<b style="color:red">Pesel number ' + pesel + ' is incorrect</b>')
+            self.assertEqual(result_variable_str, '<b style="color:red">'
+                                                  'Pesel number ' + pesel +
+                             ' is incorrect</b>')

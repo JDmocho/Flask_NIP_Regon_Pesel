@@ -35,7 +35,8 @@ class Validator:
         if len(pesel) != 11:
             return False
 
-        checksum = (9 * pesel[0] + 7 * pesel[1] + 3 * pesel[2] + pesel[3] + 9 * pesel[4] + 7 * pesel[5] + 3 * pesel[6] +
+        checksum = (9 * pesel[0] + 7 * pesel[1] + 3 * pesel[2] + pesel[3] + 9
+                    * pesel[4] + 7 * pesel[5] + 3 * pesel[6] +
                     pesel[7] + 9 * pesel[8]
                     + 7 * pesel[9]) % 10
         if checksum == pesel[10]:
