@@ -27,8 +27,8 @@ docker_run:
 docker_stop:
 		docker stop $(SERVICE_NAME)-dev
 
-docker_push:
-		docker login --username $(DOCKER_USERNAME) --password ${DOCKER_PASSWORD}; \
+docker_push: docker_build
+		@docker login --username $(DOCKER_USERNAME) --password ${DOCKER_PASSWORD}; \
 		docker tag $(SERVICE_NAME) $(DOCKER_USERNAME)/$(SERVICE_NAME); \
 		docker push $(DOCKER_USERNAME)/$(SERVICE_NAME); \
 		docker logout;

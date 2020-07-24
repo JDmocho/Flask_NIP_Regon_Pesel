@@ -12,7 +12,6 @@ script:
   - make test_cov
 
 after_success:
-  - make docker_build
   - make docker_push
 
 deploy:
