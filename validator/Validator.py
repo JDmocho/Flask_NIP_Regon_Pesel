@@ -2,7 +2,6 @@
 """
 Nip, Regon and Pesel Validator
 Version 1.0
-Author Joanna Dmochowska
 """
 
 
